@@ -14,11 +14,11 @@
 <a routerLink="/test/55">test PAGE</a>
 <button (click)="isTrue = true;">Get data</button>
 <ng-container *ngIf="isTrue; else myTemp">
-  <ul class="my-tab" tab-init [ngClass]="{tabs: isTrue, 'tabs-fixed-width': isTrue}" [flag]="isTrue" toggle>
-    <li class="" [ngClass]="{tab: isTrue}" ><a class="active" routerLinkActive="active" routerLink="all">ALL Meetups</a></li>
-    <li class="" [ngClass]="{tab: isTrue}"><a routerLinkActive="active" routerLink="myMeetups">MY Meetups</a></li>
-    <li class="" [ngClass]="{tab: isTrue}"><a routerLinkActive="active" routerLink="allData">allData</a></li>
-    <li class="" [ngClass]="{tab: isTrue}"><a routerLinkActive="active" routerLink="createData">createData</a></li>
+  <ul class="my-tab tabs tabs-fixed-width" tab-init >
+    <li class="tab"  ><a class="active" routerLinkActive="active" routerLink="all">ALL Meetups</a></li>
+    <li class="tab" ><a routerLinkActive="active" routerLink="myMeetups">MY Meetups</a></li>
+    <li class="tab" ><a routerLinkActive="active" routerLink="allData">allData</a></li>
+    <li class="tab" ><a routerLinkActive="active" routerLink="createData">createData</a></li>
   </ul>
   <router-outlet></router-outlet>
 </ng-container>
