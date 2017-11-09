@@ -1,0 +1,9 @@
+<div>
+  <form name="formTodo" [formGroup]="formTodo"  #forma (submit)="submitForm(formTodo, forma)" novalidate>
+    <div class="input-todo">
+      <input type="text" name="todo-title" #toDoInput formControlName="title">
+      <auto-complete [data]="dataAuto" [valueSearch]="toDoInput"></auto-complete>
+    </div>
+    <button [disabled]="formTodo.invalid"> Submit</button>
+  </form>
+</div>

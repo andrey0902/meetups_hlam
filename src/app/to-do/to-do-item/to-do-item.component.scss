@@ -1,0 +1,25 @@
+
+input[type='checkbox'] {
+  margin-right: 10px;
+}
+
+button.delete{
+  float: right;
+}
+
+
+.todo-item{
+  background-color: hsla(0,0%,95%,.2);
+  border: .5px solid #dbdbdb;
+  border-radius: 5px;
+  width: 100%;
+  padding: 24px;
+  margin-bottom: 15px;
+
+}
+.gray{
+  background-color: rgba(128, 128, 128, 0.14);
+}
+.isCompleted{
+  text-decoration: line-through;
+}

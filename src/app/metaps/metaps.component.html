@@ -1,0 +1,34 @@
+<modal-button></modal-button>
+<div *ngIf="reports; else empty">
+  <all-reports [reports]="reports"></all-reports>
+</div>
+<create-meet></create-meet>
+<create-subject></create-subject>
+
+<ng-template #empty>
+  <div>
+    no is report!
+  </div>
+</ng-template>
+
+<a routerLink="/test/55">test PAGE</a>
+<button (click)="isTrue = true;">Get data</button>
+<ng-container *ngIf="isTrue; else myTemp">
+  <ul class="my-tab" tab-init [ngClass]="{tabs: isTrue, 'tabs-fixed-width': isTrue}" [flag]="isTrue" toggle>
+    <li class="" [ngClass]="{tab: isTrue}" ><a class="active" routerLinkActive="active" routerLink="all">ALL Meetups</a></li>
+    <li class="" [ngClass]="{tab: isTrue}"><a routerLinkActive="active" routerLink="myMeetups">MY Meetups</a></li>
+    <li class="" [ngClass]="{tab: isTrue}"><a routerLinkActive="active" routerLink="allData">allData</a></li>
+    <li class="" [ngClass]="{tab: isTrue}"><a routerLinkActive="active" routerLink="createData">createData</a></li>
+  </ul>
+  <router-outlet></router-outlet>
+</ng-container>
+<ng-template #myTemp>
+  <my-meetups></my-meetups>
+</ng-template>
+<!--<ul class="tabs tabs-fixed-width" [flag]="isTrue" toggle>
+  <li class="tab"><a routerLinkActive="active" routerLink="all">ALL Meetups</a></li>
+  <li *ngIf="isTrue" class="tab"><a  routerLinkActive="active" routerLink="myMeetups">MY Meetups</a></li>
+  <li *ngIf="isTrue" class="tab"><a routerLinkActive="active" routerLink="allData">allData</a></li>
+  <li *ngIf="isTrue" class="tab"><a routerLinkActive="active" routerLink="createData">createData</a></li>
+</ul>
+<router-outlet></router-outlet>-->

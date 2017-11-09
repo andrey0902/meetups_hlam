@@ -1,0 +1,72 @@
+[
+  {
+    "id": 0,
+    "topic": "tema тема",
+    "status": "string",
+    "created": "data_time дата создания ",
+    "modified": "дата изменения доклада",
+    "users": [{
+      "id": 0,
+      "first_name": "name",
+      "last_name": "family",
+      "thumbs_photo": "link on photo"
+    }],
+    "materials": [{
+      "title": "нужно обсудить название документа",
+      "link": "link on materials",
+      "type": "type  file video text нужно обсудить название"
+    }]
+  },
+  {
+    "id": 1,
+    "topic": "тема 1",
+    "status": "string1",
+    "created": "data_time дата создания1",
+    "modified": "дата изменения доклада1",
+    "users": [{
+      "id":1,
+      "first_name": "name1",
+      "last_name": "family1",
+      "thumbs_photo": "link on photo1"
+    }],
+    "materials": [{
+      "title": "нужно обсудить название документа1",
+      "link": "link on materials1",
+      "type": "type  file video text нужно обсудить название1"
+    }]
+  },
+  {
+    "id": 2,
+    "topic": "tema тема2",
+    "status": "string2",
+    "created": "data_time дата создания2 ",
+    "modified": "дата изменения доклада2",
+    "users": [{
+      "id": 2,
+      "first_name": "name2",
+      "last_name": "family2",
+      "thumbs_photo": "link on photo2"
+    },
+      {
+        "id": 3,
+        "first_name": "name3",
+        "last_name": "family3",
+        "thumbs_photo": "link on photo3"
+      }],
+    "materials": [{
+      "title": "нужно обсудить название документа3",
+      "link": "link on materials3",
+      "type": "type  file video text нужно обсудить название3"
+    },
+      {
+        "title": "нужно обсудить название документа3",
+        "link": "link on materials3",
+        "type": "type  file video text нужно обсудить название3"
+      },
+      {
+        "title": "нужно обсудить название документа4",
+        "link": "link on materials4",
+        "type": "type  file video text нужно обсудить название4"
+      }]
+  }
+]

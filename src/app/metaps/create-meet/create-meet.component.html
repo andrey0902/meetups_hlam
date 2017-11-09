@@ -1,0 +1,22 @@
+<div class="table-flex">
+  <div class="table-row-flex" *ngFor="let report of reports; let i = index;">
+    <div class="table-cell-flex">
+      <mz-checkbox-container>
+        <input mz-checkbox
+               [label]="'Label'"
+               id="{{'id-' + i}}"
+               type="checkbox"
+               (change)="toggleReports($event, report)"
+        >
+      </mz-checkbox-container>
+    </div>
+    <div class="table-cell-flex">
+      {{report.topic}}
+    </div>
+    <div class="table-cell-flex">
+      <div *ngFor="let user of report.users">
+        {{user.first_name}} {{user.last_name}}
+      </div>
+    </div>
+  </div>
+</div>

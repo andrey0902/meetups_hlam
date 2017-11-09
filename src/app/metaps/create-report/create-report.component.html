@@ -1,0 +1,30 @@
+
+<mz-modal #modal [fixedFooter]="true">
+  <mz-modal-header>
+    Modal Title
+  </mz-modal-header>
+  <mz-modal-content>
+    <div>
+      <form [formGroup]="formCreateReport" novalidate (submit)="onSubmit(formCreateReport)">
+        <mz-input-container>
+          <input mz-input
+                 [label]="'Report'"
+                 id="report-input"
+                 [formControl]="formCreateReport.get('name')"
+                 type="text">
+        </mz-input-container>
+      </form>
+    </div>
+  </mz-modal-content>
+  <mz-modal-footer>
+    <button mz-button [flat]="true"
+            type="submit"
+            [disabled]="formCreateReport.invalid"
+            (click)="onSubmit(formCreateReport)"
+            mz-modal-close
+    >
+      Confirm
+    </button>
+    <button mz-button  (click)="resetForm()" [flat]="true" mz-modal-close>Closed</button>
+  </mz-modal-footer>
+</mz-modal>

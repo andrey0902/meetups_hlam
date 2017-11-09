@@ -1,0 +1,30 @@
+.table{
+  &-flex{
+    display: table;
+    width: 100%;
+  }
+  &-head-flex{
+    width: 100%;
+  }
+  &-row-flex{
+    width: 100%;
+    display: flex;
+  }
+  &-ceil-flex{
+    flex-shrink: 0;
+    border: 1px solid lightsteelblue;
+    padding: 10px 24px;
+  }
+  &-topic{
+    flex-basis: 30%;
+  }
+  &-user{
+    flex-basis: 30%;
+  }
+  &-data{
+    flex-basis: 15%;
+  }
+  &-material{
+    flex-basis: 25%;
+  }
+}

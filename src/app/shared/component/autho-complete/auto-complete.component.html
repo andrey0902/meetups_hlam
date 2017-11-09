@@ -1,0 +1,7 @@
+<div *ngIf="isSelect">
+  <ul *ngIf="listMatch.length">
+    <li *ngFor="let item of listMatch" class="list-item" (click)="handler(item)"
+        [innerHTML]="item.subName">
+    </li>
+  </ul>
+</div>

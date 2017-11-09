@@ -1,0 +1,47 @@
+<div class="table-flex">
+  <!--table head start-->
+  <div class="table-head-flex">
+    <div class="table-row-flex">
+      <div class="table-ceil-flex table-topic">Topic
+        <search-input
+        (searchEvent)="getSearch($event)"
+        [label]="'Тема'"
+        [flag]="'topic'"
+        ></search-input></div>
+      <div class="table-ceil-flex table-user">Users
+        <search-input
+          (searchEvent)="getSearch($event)"
+          [label]="'Пользователи'"
+          [flag]="'users'"
+        ></search-input>
+      </div>
+      <div class="table-ceil-flex table-data">Data</div>
+      <div class="table-ceil-flex table-material">Materials</div>
+    </div>
+  </div>
+  <!--table head end-->
+  <!--table body start-->
+  <div class="table-body-flex">
+    <div class="table-row-flex" *ngFor="let report of reports; let i = index; let odd = odd;">
+      <div class="table-ceil-flex table-topic">
+        {{report.topic}}
+      </div>
+      <div class="table-ceil-flex table-user">
+        <div class="user" *ngFor="let user of report.users">
+          <span>{{user.first_name}} {{user.last_name}}</span> | {{user.thumbs_photo}}
+        </div>
+      </div>
+      <div class="table-ceil-flex table-data">
+        {{report.created}}
+      </div>
+      <div class="table-ceil-flex table-material">
+        <div class="material" *ngFor="let material of report.materials">
+          {{material.title}}
+          {{material.link}}
+          {{material.type}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--table body end-->
+</div>

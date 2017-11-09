@@ -1,0 +1,19 @@
+ul{
+  position: relative;
+  max-height: 70px;
+  padding: 0;
+  background-color: white;
+}
+.list-item{
+  padding: 15px 24px;
+  transition: .3s ease;
+  list-style-type: none;
+  &:hover{
+    background-color: lightgrey;
+    cursor: pointer;
+  }
+
+}
+:host /deep/ .higlight{
+  background-color: #00BCD4;
+}

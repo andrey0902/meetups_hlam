@@ -1,0 +1,37 @@
+<form  novalidate [formGroup]="myForm" (submit)="onSubmit(myForm)">
+  <button (click)="addInputFile()">Add</button>
+  <div formArrayName="files">
+
+    <div *ngFor="let file of formFiles.controls; let i = index;" style="display: flex; justify-content: space-between; width: 400px;">
+
+    <div formGroupName="i">
+      <div style="max-width: 65%;">
+        <mz-input-container>
+          <input mz-input  [formControlName]="link"
+                 [id]="" type="url">
+        </mz-input-container>
+      </div>
+
+      <div style="width: 30%;">
+        <mz-select-container>
+          <select mz-select
+                  id="options-select"
+                  [label]="'filed'"
+                  [placeholder]="'check to filed'"
+                  [formControlName]="type"
+          >
+
+            <option value="file">file</option>
+            <option value="video">video</option>
+            <option value="text">text</option>
+
+          </select>
+        </mz-select-container>
+      </div>
+    </div>
+
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="myForm.invalid">submit</button>
+</form>

@@ -1,0 +1,6 @@
+<div class="todo-item" >
+  <input type="checkbox" [checked]="todo.isDone" (change)="toggleCompleted(todo.isDone)">
+  <span *ngIf="!todo.isEditable"  [ngClass]="{isCompleted: todo.isDone}" (click)="todo.isEditable = !todo.isEditable">{{todo.title}}</span>
+  <input *ngIf="todo.isEditable" #title (keyup.enter)="todo.title = title.value; todo.isEditable = !todo.isEditable" type="text" [value]="todo.title"> <span *ngIf="todo.isEditable" (click)="todo.isEditable = !todo.isEditable">cansel</span>
+  <button class="delete" (click)="delItem()">Delete</button>
+</div>

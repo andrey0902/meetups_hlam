@@ -1,0 +1,10 @@
+<section class="todo-list" *ngIf="toDos?.length; else other_template">
+  <to-do-item  *ngFor="let toDo of toDos  let i = index; let odd = odd;"
+               [ngClass]="{gray: odd}"
+               [todo]="toDo"
+               (deleteItem)="deleteItem($event)"
+  ></to-do-item>
+</section>
+<ng-template #other_template>
+  not cases!
+</ng-template>

@@ -1,0 +1,116 @@
+<header>
+  <a href="/"> <img src="../../assets/img/angular-logo.png" alt="logo"></a>
+<h4 *myOppositeNgIf="true">{{title}}</h4>
+</header>
+<test-myinput></test-myinput>
+<hr>
+
+
+
+<app-root></app-root>
+
+<ng-template #linked let-context="name">
+    <div>{{context}}</div>
+</ng-template>
+l
+
+<div style="border: 1px solid black; display: flex; flex-flow: wrap">
+  <ng-container *ngFor="let persone of data; let i=index; let odd=odd">
+    <div style="width: 10%; flex-shrink: 0; border: 1px solid black;">
+      {{i + 1}}
+    </div>
+    <div style="width: 10%; flex-shrink: 0; border: 1px solid black;">
+      {{persone.value}}
+    </div>
+    <div style="width: 40%; flex-shrink: 0; border: 1px solid black;">
+      {{persone.name}}
+    </div>
+    <div style="width: 40%; flex-shrink: 0; border: 1px solid black;">
+      {{persone.isSad}}
+    </div>
+  </ng-container>
+</div>
+
+<ng-container *ngTemplateOutlet="linked; context:data[0]">
+
+</ng-container>
+
+
+
+<ng-template #lorem>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cum debitis dignissimos dolores fuga, harum iure labore magni, pariatur, perspiciatis porro praesentium quis quos sint tempora voluptas voluptates. At, provident?
+
+</ng-template>
+
+
+<ng-container *ngTemplateOutlet="lorem">
+
+</ng-container>
+<br>
+<div *ngIf="false; else select">
+  first template
+</div>
+
+<ng-template #select>
+  this is two template {{3 + 5}};
+</ng-template>
+
+
+<mz-checkbox-container>
+  <input mz-checkbox
+         [label]="'Label'"
+         id="checkbox-id"
+         type="checkbox">
+</mz-checkbox-container>
+    <div>
+
+      <mz-checkbox-container>
+        <input mz-checkbox
+               [label]="'show person why is not sad'"
+               id="zzz"
+               type="checkbox"
+               [checked]="sad" (change)="sad = !sad">
+      </mz-checkbox-container>
+
+      <select name="" id="">
+        <ng-container *ngFor="let person of data">
+            <ng-container *ngIf="person.isSad || sad">
+              <option [value]="person.value">{{person.name}}</option>
+            </ng-container>
+        </ng-container>
+      </select>
+<div style="width: 200px;">
+  <mz-select-container>
+    <select mz-select
+            id="options-select"
+            [label]="'Label'"
+            [placeholder]="'check to charekter'"
+    >
+      <ng-container *ngFor="let person of data">
+        <ng-container *ngIf="person.isSad || sad">
+          <option [value]="person.value">{{person.name}}</option>
+        </ng-container>
+      </ng-container>
+    </select>
+  </mz-select-container>
+</div>
+    </div>
+<mz-tab
+
+>
+  <mz-tab-item
+    [active]="'true'"
+
+    [label]="'Tab 1'"
+  >
+    Tab 1
+  </mz-tab-item>
+  <mz-tab-item [label]="'Tab 2'">Tab 2</mz-tab-item>
+  <mz-tab-item [label]="'Tab 3'">Tab 3</mz-tab-item>
+</mz-tab>
+<main>
+    <to-do-list></to-do-list>
+</main>
+
+<button *ngIf="!addToDo" (click)="addToDo = !addToDo">Add Todo</button>
+<to-do-form *ngIf="addToDo" (add)="addToDoInList($event)"></to-do-form>

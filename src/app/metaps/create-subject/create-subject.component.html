@@ -1,0 +1,19 @@
+create-subject.component
+<div [innerHtml]="messageText">
+</div>
+<div>
+  <mz-textarea-container>
+    <i mz-icon-mdi mz-textarea-prefix
+       [icon]="'message-reply-text'">
+      </i>
+  <textarea mz-textarea
+            [label]="'Comment'"
+            id="comment-textarea"
+            [value]="messageText2"
+            placeholder="Enter your comment"
+            length="150">
+
+  </textarea>
+  </mz-textarea-container>
+</div>
+
