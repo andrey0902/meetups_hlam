@@ -1,0 +1,14 @@
+<h2>autocomplete.component</h2>
+
+<p>Search captain</p>
+<ng2-completer [(ngModel)]="captain" [datasource]="captains" [minSearchLength]="0"></ng2-completer>`
+<p>form</p><br>
+<form novalidate (submit)="onSubmit($event, myFormAutocomplete)" [formGroup]="myFormAutocomplete">
+  <ng2-completer formControlName="searchStr"
+                 (selected)="onSelected($event)"
+                 [(ngModel)]="searchStr"
+                 [datasource]="dataService"
+                 [minSearchLength]="0"
+                 [placeholder]="'User'"
+  ></ng2-completer>
+</form>

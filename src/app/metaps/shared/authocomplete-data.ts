@@ -1,0 +1,32 @@
+/**
+ * Created by andrei on 12.11.2017.
+ */
+export const AUTO = [
+  { id: 0,
+    name: 'Дима Сид',
+    Picture: 'http://kinogo.cc/uploads/posts/2017-11/thumbs/1510239811_24chasanazhizn.jpg'},
+  { id: 1,
+    name: 'Вася Пупкин',
+    Picture: 'http://kinogo.cc/uploads/posts/2017-11/thumbs/1510240273_dzhungli.jpg'},
+  { id: 2,
+    name: 'Сосед Долов',
+    Picture: 'http://kinogo.cc/uploads/posts/2017-11/thumbs/1510240273_dzhungli.jpg'},
+  { id: 3,
+    name: 'Нина Семинович',
+    Picture: 'http://kinogo.cc/uploads/posts/2017-11/thumbs/1510240273_dzhungli.jpg'},
+  { id: 4,
+    name: 'Петя Ушастый',
+    Picture: 'http://kinogo.cc/uploads/posts/2017-11/thumbs/1510240273_dzhungli.jpg'},
+  { id: 5,
+    name: 'Руслан Долгий',
+    Picture: 'http://kinogo.cc/uploads/posts/2017-11/thumbs/1510240273_dzhungli.jpg'},
+  { id: 6,
+    name: 'Вася Донин',
+    Picture: 'http://kinogo.cc/uploads/posts/2017-11/thumbs/1510240273_dzhungli.jpg'},
+  { id: 7,
+    name: 'Семен Пупкин',
+    Picture: 'http://kinogo.cc/uploads/posts/2017-11/thumbs/1510240273_dzhungli.jpg'},
+  { id: 8,
+    name: 'Вася Дрозд',
+    Picture: 'http://kinogo.cc/uploads/posts/2017-11/thumbs/1510240273_dzhungli.jpg'},
+];

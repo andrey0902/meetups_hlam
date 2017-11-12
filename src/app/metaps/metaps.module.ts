@@ -4,7 +4,7 @@
 import { NgModule } from '@angular/core';
 
 import { MetapsComponent } from './metaps.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterializeModule } from 'ng2-materialize/dist';
 import { MetapsRoutingModule } from './metaps-routing.module';
 import { DataService } from './shared/data.service';
@@ -24,9 +24,14 @@ import { CreateDataComponent } from '../create-data/create-data.component';
 import { ToggleDirective } from './toggle.directive';
 import 'materialize-css';
 import { TabInitializeDirective } from './shared/tab-initialize.directive';
+import { AuthocompleteComponent } from './autocomplete/autocomplete.component';
+import { Ng2CompleterModule } from 'ng2-completer';
+import { AuthocompleteService } from './autocomplete/authocomplete.service';
 @NgModule({
  imports: [
    CommonModule,
+   FormsModule,
+   Ng2CompleterModule,
    ReactiveFormsModule,
    MaterializeModule,
    MetapsRoutingModule,
@@ -47,9 +52,11 @@ import { TabInitializeDirective } from './shared/tab-initialize.directive';
    AllDataComponent,
    CreateDataComponent,
    ToggleDirective,
-   TabInitializeDirective
+   TabInitializeDirective,
+   AuthocompleteComponent
  ],
- providers: [DataService],
+ providers: [DataService,
+   AuthocompleteService],
   entryComponents: [CreateReportComponent]
 })
 export class MetapsModule { }
