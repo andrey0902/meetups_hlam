@@ -1,0 +1,98 @@
+
+<mz-modal #modal [fixedFooter]="true">
+  <mz-modal-header>
+    создание встречи
+  </mz-modal-header>
+  <mz-modal-content>
+    <div>
+      <form [formGroup]="createMeetupsForm" novalidate (submit)="onSubmit(createMeetupsForm)">
+        <mz-input-container>
+          <input mz-input
+                 [label]="'Тема'"
+                 id="input"
+                 [formControl]="createMeetupsForm.get('topic')"
+                 type="text">
+        </mz-input-container>
+
+        <div formArrayName="users">
+          <ng-container *ngFor="let user of usersArray.controls; let i=index;">
+            <mz-input-container>
+              <input mz-input
+                     [label]="'Докладчик'"
+                     [formControl]="user.get('name')"
+                     type="text">
+            </mz-input-container>
+          </ng-container>
+        </div>
+
+        <div class="radio">
+          <mz-radio-button-container>
+            <input mz-radio-button
+                   [label]="'новое'"
+                   formControlName="status"
+
+                   id="radio-button-id"
+                   name="status"
+                   value="nwe"
+                   type="radio">
+          </mz-radio-button-container>
+          <mz-radio-button-container>
+            <input mz-radio-button
+                   [label]="'deferred'"
+                   formControlName="status"
+
+                   id="radio"
+                   name="status"
+                   value='deferred'
+                   type="radio">
+          </mz-radio-button-container>
+        </div>
+
+        <div *ngIf="isCommet">
+          <mz-input-container>
+            <input mz-input
+                   [label]="'Коментарий'"
+                   [formControl]="createMeetupsForm.get('comment')"
+                   type="text">
+          </mz-input-container>
+        </div>
+
+
+        <div class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <ng2-completer #openCloseExample
+                             [matchClass]="'highlight'"
+                             [datasource]="customData"
+                             [minSearchLength]="2"
+                             [inputId]="autocomplete-input"
+                             [inputClass]="'autocomplete'"
+                             [placeholder]="'Докладчики'"
+                             [inputName]="'autocomplete-input'"
+              >
+              </ng2-completer>
+              <label for="autocomplete-input" class="active">Autocomplete</label>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+      </form>
+    </div>
+  </mz-modal-content>
+  <mz-modal-footer>
+    <button mz-button [flat]="true"
+            type="submit"
+            [disabled]="createMeetupsForm.invalid"
+            (click)="onSubmit(createMeetupsForm)"
+            mz-modal-close
+    >
+      Confirm
+    </button>
+    <button mz-button  (click)="resetForm()" [flat]="true" mz-modal-close>Closed</button>
+  </mz-modal-footer>
+</mz-modal>

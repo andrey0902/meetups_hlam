@@ -10,5 +10,15 @@
                  [datasource]="dataService"
                  [minSearchLength]="0"
                  [placeholder]="'User'"
+                 [clearUnselected]="true"
+  ></ng2-completer>
+  <br>
+  <p>text</p>
+  <ng2-completer formControlName="searchStr"
+                 (selected)="onSelected($event)"
+                 [(ngModel)]="searchStr"
+                 [datasource]="dataService2"
+                 [minSearchLength]="0"
+                 [placeholder]="'User2'"
   ></ng2-completer>
 </form>

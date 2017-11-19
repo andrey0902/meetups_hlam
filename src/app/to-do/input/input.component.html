@@ -4,21 +4,21 @@
 
     <div *ngFor="let file of formFiles.controls; let i = index;" style="display: flex; justify-content: space-between; width: 400px;">
 
-    <div formGroupName="i">
-      <div style="max-width: 65%;">
+    <div class="gruppu">
+      <div class="input-i">
         <mz-input-container>
-          <input mz-input  [formControlName]="link"
+          <input mz-input  [formControl]="file.get('link')"
                  [id]="" type="url">
         </mz-input-container>
       </div>
 
-      <div style="width: 30%;">
+      <div class="select-i" >
         <mz-select-container>
           <select mz-select
                   id="options-select"
                   [label]="'filed'"
                   [placeholder]="'check to filed'"
-                  [formControlName]="type"
+                  [formControl]="file.get('type')"
           >
 
             <option value="file">file</option>

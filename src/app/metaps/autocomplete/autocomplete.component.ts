@@ -21,6 +21,7 @@ export class AuthocompleteComponent implements OnInit {
   public searchStr: string;
   public captain: string;
   public dataService: CompleterData;
+  public dataService2: CompleterData;
   public searchData = [
     {color: 'red', value: '#f00'},
     {color: 'green', value: '#0f0'},
@@ -38,6 +39,8 @@ export class AuthocompleteComponent implements OnInit {
   constructor(private completerService: CompleterService,
               private authoService: AuthocompleteService) {
     this.dataService = completerService.local(this.searchData, 'color', 'color');
+    this.dataService2 =
+      completerService.remote('https://jsonplaceholder.typicode.com/posts/');
   }
 
   public ngOnInit() {

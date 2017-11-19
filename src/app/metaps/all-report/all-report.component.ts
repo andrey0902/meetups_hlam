@@ -3,6 +3,8 @@
  */
 import { Component, Input, OnInit } from '@angular/core';
 import { Report } from '../shared/report.model';
+import { MzModalService } from 'ng2-materialize/dist';
+import { CreateMeetupsModalComponent } from '../create-meetups-modal/create-meetups-modal.component';
 
 @Component({
  selector: 'all-reports',
@@ -12,10 +14,17 @@ import { Report } from '../shared/report.model';
 
 export class AllReportsComponent implements OnInit, Input {
  @Input() public reports: Report[];
-  constructor() { }
+  public modalRef: any;
+  constructor(private modslService: MzModalService) { }
 
  ngOnInit() { }
  public getSearch(value) {
     console.log('from component', value);
  }
+ public openModal() {
+     this.modalRef = this.modslService.open(CreateMeetupsModalComponent);
+     this.modalRef.instance.modalComponent.onClose.subscribe((result) => {
+       console.log('listening in component button', result);
+     });
+   }
 }

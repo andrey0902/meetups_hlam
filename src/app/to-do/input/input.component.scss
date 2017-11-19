@@ -1,0 +1,13 @@
+form {
+  border: 1px solid black;
+}
+.gruppu {
+  display: flex;
+  justify-content: space-between;
+}
+.input-i {
+  flex-basis: 60%;
+}
+.select-i {
+  flex-basis: 30%;
+}

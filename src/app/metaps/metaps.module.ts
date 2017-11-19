@@ -27,6 +27,11 @@ import { TabInitializeDirective } from './shared/tab-initialize.directive';
 import { AuthocompleteComponent } from './autocomplete/autocomplete.component';
 import { Ng2CompleterModule } from 'ng2-completer';
 import { AuthocompleteService } from './autocomplete/authocomplete.service';
+import { AuthguardService } from './shared/service/authguard.service';
+import { ResolveService } from '../home/resolve.service';
+import { CreateMeetupsModalComponent } from './create-meetups-modal/create-meetups-modal.component';
+import { CustomDataService } from './create-meetups-modal/custom.data';
+import { AuthocompleteService2 } from './create-meetups-modal/autho-complete.service';
 @NgModule({
  imports: [
    CommonModule,
@@ -53,10 +58,17 @@ import { AuthocompleteService } from './autocomplete/authocomplete.service';
    CreateDataComponent,
    ToggleDirective,
    TabInitializeDirective,
-   AuthocompleteComponent
+   AuthocompleteComponent,
+   CreateMeetupsModalComponent
  ],
  providers: [DataService,
-   AuthocompleteService],
-  entryComponents: [CreateReportComponent]
+   AuthocompleteService,
+   AuthguardService,
+   ResolveService,
+   CustomDataService,
+   AuthocompleteService2
+ ],
+  entryComponents: [CreateReportComponent,
+    CreateMeetupsModalComponent]
 })
 export class MetapsModule { }

@@ -3,10 +3,12 @@
  */
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { CustomValidator } from './custom.validators';
 
 @Component({
   selector: 'test-myinput',
-  templateUrl: 'input.component.html'
+  templateUrl: 'input.component.html',
+  styleUrls: ['input.component.scss']
 })
 
 export class InputComponent implements OnInit {
@@ -26,7 +28,7 @@ export class InputComponent implements OnInit {
     this.formFiles = this.createFormArray();
     this.myForm = new FormGroup({
       files: this.formFiles
-    });
+    },  CustomValidator.toEqual('files') );
   }
 
   public createFormArray() {

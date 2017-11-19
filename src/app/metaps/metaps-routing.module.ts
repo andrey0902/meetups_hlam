@@ -10,6 +10,7 @@ import { AllComponent } from './all/all.component';
 import { MyMeetupsComponent } from '../my-meetups/my-meetups.component';
 import { AllDataComponent } from './all-data/all-data.component';
 import { CreateDataComponent } from '../create-data/create-data.component';
+import { AuthguardService } from './shared/service/authguard.service';
 
 @NgModule({
  imports: [RouterModule.forChild([
@@ -18,12 +19,18 @@ import { CreateDataComponent } from '../create-data/create-data.component';
      component: MetapsComponent,
      children: [
        {
+         path: '',
+         redirectTo: '/metaps/all',
+         pathMatch: 'full'
+       },
+       {
          path: 'all',
          component: AllComponent
        },
        {
          path: 'myMeetups',
-         component: MyMeetupsComponent
+         component: MyMeetupsComponent,
+         canActivate: [AuthguardService]
        },
        {
          path: 'allData',
